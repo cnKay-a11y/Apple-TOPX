@@ -311,6 +311,30 @@ p.lead {
   padding-top: 14px;
 }
 .track-card.rose .track-detail { border-top-color: rgba(255,101,132,.1); }
+.track-detail ol {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.track-detail ol li {
+  display: flex;
+  gap: 9px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+.track-detail ol li .li-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 16px;
+  margin-top: 1px;
+}
+.track-card.rose .track-detail ol li .li-num { color: var(--accent-2); }
 
 /* ===== SLIDE 4 — GROWTH SYSTEM ===== */
 #s4 { display: flex; flex-direction: column; }
@@ -998,25 +1022,35 @@ p.lead {
           <div class="track-tags">
             <span class="tag">面子 / 身份</span>
             <span class="tag">只增不减</span>
-            <span class="tag">泡泡玛特集齐感</span>
+            <span class="tag">不可兑换</span>
           </div>
           <div class="track-detail">
-            模仿游戏经验值逻辑，成长值只涨不跌（或按年重置）。打造等级身份认同与勋章收集情绪价值。用户不会因"兑换"而降级。
+            <ol>
+              <li><span class="li-num">1.</span>消费即积累：每消费 1 元 = 1 成长值，自动入账，无需手动领取</li>
+              <li><span class="li-num">2.</span>只增不减：永不扣除，不因兑换或退货降级，用户无后顾之忧</li>
+              <li><span class="li-num">3.</span>解锁等级：达到阶梯门槛（1,000 / 5,000 / 20,000）自动晋升，获得对应服务权益</li>
+              <li><span class="li-num">4.</span>触发勋章：完成特定成就后推送通知，必须到店领取实体 NFC 勋章</li>
+            </ol>
           </div>
         </div>
         <div class="track-card rose">
           <div class="track-icon rose">⚡</div>
           <div>
-            <div class="track-name">能量豆</div>
-            <div class="track-sub">积分货币 · 用于兑换权益</div>
+            <div class="track-name">积分</div>
+            <div class="track-sub">店内货币 · 用于兑换权益</div>
           </div>
           <div class="track-tags">
             <span class="tag pink">里子 / 实惠</span>
             <span class="tag pink">高频获取消耗</span>
-            <span class="tag pink">美团金币逻辑</span>
+            <span class="tag pink">年底不清零</span>
           </div>
           <div class="track-detail">
-            强调高频获取、高频消耗。签到、体验、旧机估值都能得豆；咖啡、服务、配件都能换。解决"积分没处花"的根本问题。
+            <ol>
+              <li><span class="li-num">1.</span>多途径获取：到店签到、体验新品、旧机估值均可得积分，不限于消费</li>
+              <li><span class="li-num">2.</span>即时兑换：随时兑换咖啡券、贴膜、小配件等实物权益，低门槛可感知</li>
+              <li><span class="li-num">3.</span>服务抵扣：积分可抵扣数据迁移、设备清洁等高痛点服务费用</li>
+              <li><span class="li-num">4.</span>年底增值：积分不清零，可选锁定 3 个月增值 20%，兑换高价值配件</li>
+            </ol>
           </div>
         </div>
       </div>
@@ -1066,9 +1100,14 @@ p.lead {
       </div>
       <div class="anti-rush" data-a="up">
         <div class="anti-rush-icon">🚧</div>
-        <div>
-          <h4>防通关机制 · 核心设计</h4>
-          <p>单笔消费最多获得 <strong style="color:var(--accent-2);">2,000 成长值</strong>封顶 — 买 2 万的 Mac 也只到 LV2，想升 LV3 必须下次再来买配件或带人进店。电脑/手机大件每月最多贡献 <strong style="color:var(--accent-2);">3,000 成长值</strong>，强制拉长用户生命周期。</p>
+        <div style="flex:1;">
+          <h4 style="margin-bottom:10px;">防通关机制 · 核心设计</h4>
+          <ol style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;">
+            <li style="display:flex;gap:8px;font-size:12px;color:var(--text-secondary);line-height:1.5;"><span style="color:var(--accent-2);font-weight:700;flex-shrink:0;">1.</span>单笔封顶：单笔消费最多计入 <strong style="color:var(--text-primary);">2,000 成长值</strong>，超出部分不累计</li>
+            <li style="display:flex;gap:8px;font-size:12px;color:var(--text-secondary);line-height:1.5;"><span style="color:var(--accent-2);font-weight:700;flex-shrink:0;">2.</span>月度上限：手机 / 电脑大件每月最多贡献 <strong style="color:var(--text-primary);">3,000 成长值</strong>，防止集中刷单</li>
+            <li style="display:flex;gap:8px;font-size:12px;color:var(--text-secondary);line-height:1.5;"><span style="color:var(--accent-2);font-weight:700;flex-shrink:0;">3.</span>多维门槛：LV3 要求购买 2 个品类，LV4 要求集齐 3 枚实体勋章，消费额不是唯一指标</li>
+            <li style="display:flex;gap:8px;font-size:12px;color:var(--text-secondary);line-height:1.5;"><span style="color:var(--accent-2);font-weight:700;flex-shrink:0;">4.</span>效果：买 2 万的 Mac 最多到 LV2，升 LV3 必须再次进店消费配件或完成勋章任务</li>
+          </ol>
         </div>
       </div>
     </div>
@@ -1087,12 +1126,12 @@ p.lead {
       </div>
       <div class="act-grid" data-a="stagger">
         <div class="act-col">
-          <div class="act-col-title purple">⚡ 能量豆 · 获取方式</div>
+          <div class="act-col-title purple">⚡ 积分 · 获取方式</div>
           <div class="act-item">
             <div class="act-item-icon">📶</div>
             <div>
               <div class="act-item-title">Wi-Fi 自动签到（零操作）</div>
-              <div class="act-item-desc">连接门店 Wi-Fi 后台自动签到，推送"签到成功 +10豆"。<strong style="color:var(--text-primary);">无需扫码，无需店员操作。</strong></div>
+              <div class="act-item-desc">连接门店 Wi-Fi 后台自动签到，推送"签到成功 +10积分"。<strong style="color:var(--text-primary);">无需扫码，无需店员操作。</strong></div>
             </div>
           </div>
           <div class="act-item">
@@ -1111,11 +1150,11 @@ p.lead {
           </div>
         </div>
         <div class="act-col">
-          <div class="act-col-title rose">🎯 能量豆 · 消耗流量钩</div>
+          <div class="act-col-title rose">🎯 积分 · 消耗流量钩</div>
           <div class="act-item rose">
             <div class="act-item-icon">☕</div>
             <div>
-              <div class="act-item-title">50豆 + 9.9元 兑换咖啡</div>
+              <div class="act-item-title">50积分 + 9.9元 兑换咖啡</div>
               <div class="act-item-desc">硬通货钩子。低成本把人引进店，来了就可能顺手买根线或贴个膜。</div>
             </div>
           </div>
@@ -1123,14 +1162,14 @@ p.lead {
             <div class="act-item-icon">💾</div>
             <div>
               <div class="act-item-title">数据迁移（高痛点服务）</div>
-              <div class="act-item-desc">LV2 以上或消耗大量积分可兑换免费迁移。官方收费项目转化为会员高价值权益。</div>
+              <div class="act-item-desc">LV2 以上会员或消耗指定积分可兑换免费迁移，官方收费项目转化为会员专属权益。</div>
             </div>
           </div>
           <div class="act-item rose">
             <div class="act-item-icon">✨</div>
             <div>
               <div class="act-item-title">设备清洁保养</div>
-              <div class="act-item-desc">积分兑换 AirPods 超声波清洗或机身抛光，门店成本低，用户感知价值高。</div>
+              <div class="act-item-desc">积分兑换 AirPods 超声波清洗或机身抛光，服务成本低，用户感知价值高。</div>
             </div>
           </div>
         </div>
@@ -1220,15 +1259,15 @@ p.lead {
           <div class="risk-item">
             <div class="risk-dot purple"></div>
             <div>
-              <div class="risk-item-title">微信授权登录</div>
-              <div class="risk-item-desc">必须通过微信一键授权注册，过滤机器账号与批量黄牛操作。</div>
+              <div class="risk-item-title">微信实名授权</div>
+              <div class="risk-item-desc">注册须绑定微信账号完成实名授权，一人一号，从源头杜绝批量机器账号与黄牛注册。</div>
             </div>
           </div>
           <div class="risk-item">
             <div class="risk-dot purple"></div>
             <div>
-              <div class="risk-item-title">频次硬限制</div>
-              <div class="risk-item-desc">同一账号：每天签到 1 次，每月核销 2 次免费服务。超出自动拒绝。</div>
+              <div class="risk-item-title">行为频次限制</div>
+              <div class="risk-item-desc">每账号每日签到上限 1 次；免费服务权益（如数据迁移）每月可核销上限 2 次，超出后系统自动拦截，不依赖人工判断。</div>
             </div>
           </div>
           <div class="risk-item">
@@ -1283,36 +1322,38 @@ p.lead {
           <div class="step-big">01</div>
           <div class="step-title">系统开发</div>
           <ul class="step-list">
-            <li>上线双轨制（成长值 + 能量豆）</li>
-            <li>配置 LBS 地理围栏</li>
-            <li>开启微信服务通知推送</li>
+            <li>上线双轨制（成长值 + 积分）</li>
+            <li>配置 LBS 地理围栏与 Wi-Fi 自动签到</li>
+            <li>开启微信实名授权与服务通知推送</li>
+            <li>动态会员码每分钟刷新机制上线</li>
           </ul>
         </div>
         <div class="step-card">
           <div class="step-big">02</div>
           <div class="step-title">物料准备</div>
           <ul class="step-list">
-            <li>设计实体 NFC 勋章（首批 500–1000 枚）</li>
-            <li>采购咖啡/饮品券作硬通货</li>
-            <li>制作等级证书与贴纸套装</li>
+            <li>设计实体 NFC 勋章（首批 500–1,000 枚）</li>
+            <li>采购咖啡 / 饮品券作积分兑换硬通货</li>
+            <li>制作等级权益说明卡与贴纸套装</li>
           </ul>
         </div>
         <div class="step-card">
           <div class="step-big">03</div>
           <div class="step-title">门店培训</div>
           <ul class="step-list">
-            <li>统一话术："请出示会员码，系统自动核销"</li>
-            <li>明确禁止代客操作积分</li>
-            <li>考核上岗，签署操作规范</li>
+            <li>统一核销话术："请出示会员码，系统自动核销"</li>
+            <li>明确禁止代客操作积分，违规举报奖励 200 元</li>
+            <li>考核上岗，签署操作规范承诺书</li>
           </ul>
         </div>
         <div class="step-card cta">
           <div class="step-big" style="color:#d4c8ff;">04</div>
           <div class="step-title">启动活动 🚀</div>
           <ul class="step-list">
-            <li>结合新品发售或会员日节点</li>
-            <li>到店打卡送实体勋章</li>
-            <li>引爆第一波进店打卡流量</li>
+            <li>结合新品发售或会员日节点冷启动</li>
+            <li>到店打卡领早鸟实体勋章，引爆首波流量</li>
+            <li>老带新裂变：推荐好友注册双方各得双倍积分</li>
+            <li>分享有礼：发朋友圈打卡得积分，扩大自然传播</li>
           </ul>
         </div>
       </div>
