@@ -775,6 +775,103 @@ p.lead {
 
 /* ===== SLIDE MEDAL ===== */
 #s6 { display: flex; flex-direction: column; }
+
+/* Funnel flow */
+.funnel-flow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 22px;
+}
+.funnel-step {
+  flex: 1;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  box-shadow: var(--shadow-card);
+}
+.funnel-step.f1 { border-top: 3px solid #a78bfa; }
+.funnel-step.f2 { border-top: 3px solid #f59e0b; }
+.funnel-step.f3 { border-top: 3px solid #16a34a; }
+.funnel-conn {
+  width: 28px;
+  flex-shrink: 0;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 16px;
+  opacity: 0.35;
+  padding: 0 2px;
+}
+.funnel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 100px;
+  width: fit-content;
+  margin-bottom: 2px;
+}
+.funnel-badge.b1 { background: #ede8ff; color: #7c3aed; }
+.funnel-badge.b2 { background: #fef3c7; color: #b45309; }
+.funnel-badge.b3 { background: #f0fdf4; color: #16a34a; }
+.funnel-title { font-size: 14px; font-weight: 800; color: var(--text-primary); }
+.funnel-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.55; }
+.funnel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.funnel-list-item {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  line-height: 1.5;
+}
+.funnel-list-item::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+  margin-top: 6px;
+  opacity: 0.4;
+}
+
+/* Condensed medal strip */
+.medal-strip {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+.medal-chip {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+}
+.medal-chip-icon { font-size: 20px; flex-shrink: 0; }
+.medal-chip-body {}
+.medal-chip-name { font-size: 13px; font-weight: 700; color: var(--text-primary); }
+.medal-chip-sub { font-size: 11px; color: var(--text-secondary); margin-top: 1px; }
 .medal-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -972,7 +1069,7 @@ p.lead {
       </div>
       <div class="cover-sub" data-a="up">会员体系优化方案 · 双轨制驱动重构</div>
       <div class="cover-chips" data-a="up">
-        <div class="chip filled">三问三答</div>
+        <div class="chip filled">三点诊断</div>
         <div class="chip">极简双轨</div>
         <div class="chip">勋章促活</div>
         <div class="chip">动态码风控</div>
@@ -1077,7 +1174,7 @@ p.lead {
     <div class="slide-body">
       <div data-a="up">
         <div class="eyebrow">问题对应解法</div>
-        <h2 class="display">三个问题 · 三套解法</h2>
+        <h2 class="display">三点诊断 · 三套解法</h2>
         <p class="lead">每个模块都有明确来处，解法与问题一一对应。</p>
       </div>
       <div class="fw-rows" data-a="stagger">
@@ -1107,7 +1204,7 @@ p.lead {
           <div class="fw-arrow">→</div>
           <div class="fw-solution">
             <div class="fw-sname">勋章促活体系</div>
-            <div class="fw-sdesc">完成行为任务领取实体 NFC 勋章，勋章集齐可反向解锁高等级，强制制造到店理由。</div>
+            <div class="fw-sdesc">线上轻任务积累资格 → 解锁到店机会 → 领取实体 NFC 勋章。到店是奖励，不是门槛；勋章集齐可反向解锁高等级。</div>
             <div class="fw-stags"><span class="tag pink">实体勋章</span><span class="tag pink">行为驱动</span><span class="tag pink">到店领取</span></div>
           </div>
         </div>
@@ -1250,50 +1347,81 @@ p.lead {
     </div>
     <div class="slide-body">
       <div data-a="up">
-        <div class="eyebrow">实体 NFC + 特权解锁</div>
-        <h2 class="display">勋章 · 可穿戴的特权钥匙</h2>
+        <div class="eyebrow">轻量起步 · 到店收获</div>
+        <h2 class="display">到店不是门槛，是奖励</h2>
+        <p class="lead">从零门槛线上任务开始，逐步建立到店意愿，用勋章把每次到访变成高价值体验。</p>
       </div>
-      <div class="medal-grid" data-a="stagger">
-        <div class="medal-card">
-          <div class="medal-icon">🐦</div>
-          <div class="medal-name">早鸟勋章</div>
-          <div class="medal-how">获取方式</div>
-          <div class="medal-desc">新品发售日当天到店打卡领取。限量发行，先到先得，制造稀缺感。</div>
-        </div>
-        <div class="medal-card" style="border-color:#d4c8ff;">
-          <div class="medal-icon">🎯</div>
-          <div class="medal-name">配件达人勋章</div>
-          <div class="medal-how">获取方式</div>
-          <div class="medal-desc">累计购买 3 款配件（壳 / 膜 / 线），到店核销领取实体徽章。</div>
-        </div>
-        <div class="medal-card" style="border-color:#ffd6df;">
-          <div class="medal-icon">💾</div>
-          <div class="medal-name">数据大师勋章</div>
-          <div class="medal-how">获取方式</div>
-          <div class="medal-desc">使用店内"免费数据迁移"服务后领取，绑定高价值服务体验。</div>
-        </div>
-      </div>
-      <div class="medal-privilege-row" data-a="stagger">
-        <div class="medal-privilege p2">
-          <div class="medal-privilege-count">×2</div>
-          <div>
-            <div class="medal-privilege-label">集齐 2 枚勋章</div>
-            <div class="medal-privilege-title">直接解锁 LV3 Pro 等级</div>
+
+      <div class="funnel-flow" data-a="stagger">
+        <div class="funnel-step f1">
+          <div class="funnel-badge b1">第一层 · 零门槛</div>
+          <div class="funnel-title">线上触达</div>
+          <div class="funnel-desc">推送 / 小程序轻任务，不要求到店，降低参与摩擦。</div>
+          <div class="funnel-list">
+            <div class="funnel-list-item">新品上线 → 推送"点击了解得积分"</div>
+            <div class="funnel-list-item">线上旧机估值 → 自动发放积分</div>
+            <div class="funnel-list-item">分享内容给朋友 → 触发进度条 +1</div>
           </div>
         </div>
-        <div class="medal-privilege p3">
-          <div class="medal-privilege-count">×3</div>
-          <div>
-            <div class="medal-privilege-label">集齐 3 枚勋章</div>
-            <div class="medal-privilege-title">解锁 LV4 Ultra + 全年免费贴膜</div>
+        <div class="funnel-conn">→</div>
+        <div class="funnel-step f2">
+          <div class="funnel-badge b2">第二层 · 低门槛</div>
+          <div class="funnel-title">行为积累</div>
+          <div class="funnel-desc">进度条可见可感知，用户自主推进，到一定值解锁"到店资格"。</div>
+          <div class="funnel-list">
+            <div class="funnel-list-item">连续签到 / 评价订单 → 积累进度</div>
+            <div class="funnel-list-item">进度满格 → 推送"你已解锁勋章资格"</div>
+            <div class="funnel-list-item">7 天内有效，营造紧迫感</div>
+          </div>
+        </div>
+        <div class="funnel-conn">→</div>
+        <div class="funnel-step f3">
+          <div class="funnel-badge b3">第三层 · 高价值</div>
+          <div class="funnel-title">到店兑现</div>
+          <div class="funnel-desc">凭资格码到店，30 秒领实体 NFC 勋章 — 到店是收获感，不是任务负担。</div>
+          <div class="funnel-list">
+            <div class="funnel-list-item">出示资格码 → 店员当场核销</div>
+            <div class="funnel-list-item">领取实体 NFC 勋章 + 积分奖励</div>
+            <div class="funnel-list-item">NFC 碰一下 iPad → 特权即时生效</div>
           </div>
         </div>
       </div>
-      <div class="nfc-bar" data-a="up" style="margin-top:14px;">
-        <div class="icon">📲</div>
-        <div>
-          <h4>NFC 碰一下 · 即时生效</h4>
-          <p>实体勋章内置 NFC 芯片，进店碰一下店员 iPad，自动亮码积分或核销权益 — 既是收藏品，也是特权入口。</p>
+
+      <div class="medal-strip" data-a="stagger">
+        <div class="medal-chip">
+          <div class="medal-chip-icon">🐦</div>
+          <div class="medal-chip-body">
+            <div class="medal-chip-name">早鸟勋章</div>
+            <div class="medal-chip-sub">新品发售日 · 限量稀缺</div>
+          </div>
+        </div>
+        <div class="medal-chip">
+          <div class="medal-chip-icon">🎯</div>
+          <div class="medal-chip-body">
+            <div class="medal-chip-name">配件达人勋章</div>
+            <div class="medal-chip-sub">累计购买 3 款配件</div>
+          </div>
+        </div>
+        <div class="medal-chip">
+          <div class="medal-chip-icon">💾</div>
+          <div class="medal-chip-body">
+            <div class="medal-chip-name">数据大师勋章</div>
+            <div class="medal-chip-sub">使用数据迁移服务后领取</div>
+          </div>
+        </div>
+        <div class="medal-privilege p2" style="flex:1.2;margin:0;">
+          <div class="medal-privilege-count" style="font-size:26px;">×2</div>
+          <div>
+            <div class="medal-privilege-label">集齐 2 枚</div>
+            <div class="medal-privilege-title">直接解锁 LV3 Pro</div>
+          </div>
+        </div>
+        <div class="medal-privilege p3" style="flex:1.2;margin:0;">
+          <div class="medal-privilege-count" style="font-size:26px;">×3</div>
+          <div>
+            <div class="medal-privilege-label">集齐 3 枚</div>
+            <div class="medal-privilege-title">LV4 Ultra + 全年贴膜</div>
+          </div>
         </div>
       </div>
     </div>
