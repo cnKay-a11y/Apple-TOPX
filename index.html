@@ -705,6 +705,74 @@ p.lead {
 .toc-label { font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
 .toc-sub { font-size: 11px; color: var(--text-secondary); }
 
+/* ===== SLIDE FRAMEWORK ===== */
+#s3 { display: flex; flex-direction: column; }
+.fw-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 28px;
+  flex: 1;
+  justify-content: center;
+}
+.fw-row {
+  display: flex;
+  align-items: stretch;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
+}
+.fw-problem {
+  width: 268px;
+  flex-shrink: 0;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.fw-problem.v1 { background: linear-gradient(135deg, #ede8ff, #f5f3ff); border-right: 1px solid #d4c8ff; }
+.fw-problem.v2 { background: linear-gradient(135deg, #fff0f3, #fff8fa); border-right: 1px solid #ffd6df; }
+.fw-problem.v3 { background: linear-gradient(135deg, #f0fdf4, #f7fffe); border-right: 1px solid #bbf7d0; }
+.fw-pnum {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.fw-problem.v1 .fw-pnum { color: var(--accent); }
+.fw-problem.v2 .fw-pnum { color: var(--accent-2); }
+.fw-problem.v3 .fw-pnum { color: #16a34a; }
+.fw-plabel { font-size: 10px; font-weight: 700; color: var(--text-secondary); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 3px; }
+.fw-pname { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+.fw-arrow {
+  width: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--border);
+  font-size: 20px;
+  border-right: 1px solid var(--border);
+}
+.fw-solution {
+  flex: 1;
+  padding: 20px 28px;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+.fw-sname { font-size: 17px; font-weight: 800; color: var(--text-primary); letter-spacing: -0.01em; }
+.fw-sdesc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; }
+.fw-stags { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 2px; }
+
+/* ===== SLIDE DUAL TRACK ===== */
+#s-dual { display: flex; flex-direction: column; }
+
 /* ===== SLIDE MEDAL ===== */
 #s6 { display: flex; flex-direction: column; }
 .medal-grid {
@@ -904,9 +972,9 @@ p.lead {
       </div>
       <div class="cover-sub" data-a="up">会员体系优化方案 · 双轨制驱动重构</div>
       <div class="cover-chips" data-a="up">
-        <div class="chip filled">极简双轨</div>
-        <div class="chip">防通关机制</div>
-        <div class="chip">实体 NFC 勋章</div>
+        <div class="chip filled">三问三答</div>
+        <div class="chip">极简双轨</div>
+        <div class="chip">勋章促活</div>
         <div class="chip">动态码风控</div>
       </div>
     </div>
@@ -932,30 +1000,35 @@ p.lead {
         <div class="toc-item" data-goto="s3">
           <div class="toc-num">02</div>
           <div class="toc-divider"></div>
-          <div><div class="toc-label">解决框架</div><div class="toc-sub">双轨制：拆分会员价值</div></div>
+          <div><div class="toc-label">解决框架</div><div class="toc-sub">三个问题 · 三套解法</div></div>
         </div>
-        <div class="toc-item" data-goto="s4">
+        <div class="toc-item" data-goto="s-dual">
           <div class="toc-num">03</div>
           <div class="toc-divider"></div>
-          <div><div class="toc-label">成长体系</div><div class="toc-sub">晋升标准 + 防通关机制</div></div>
+          <div><div class="toc-label">双轨会员体系</div><div class="toc-sub">成长值 + 积分 · 各司其职</div></div>
         </div>
-        <div class="toc-item" data-goto="s5">
+        <div class="toc-item" data-goto="s4">
           <div class="toc-num">04</div>
           <div class="toc-divider"></div>
-          <div><div class="toc-label">促活设计</div><div class="toc-sub">轻量化高频钩子</div></div>
+          <div><div class="toc-label">成长体系</div><div class="toc-sub">晋升标准 + 防通关机制</div></div>
         </div>
         <div class="toc-item" data-goto="s6">
           <div class="toc-num">05</div>
           <div class="toc-divider"></div>
-          <div><div class="toc-label">勋章体系</div><div class="toc-sub">实体 NFC + 特权解锁</div></div>
+          <div><div class="toc-label">勋章促活体系</div><div class="toc-sub">实体 NFC + 特权解锁</div></div>
+        </div>
+        <div class="toc-item" data-goto="s5">
+          <div class="toc-num">06</div>
+          <div class="toc-divider"></div>
+          <div><div class="toc-label">积分权益设计</div><div class="toc-sub">获取方式 + 消耗流量钩</div></div>
         </div>
         <div class="toc-item" data-goto="s7">
-          <div class="toc-num">06</div>
+          <div class="toc-num">07</div>
           <div class="toc-divider"></div>
           <div><div class="toc-label">风控体系</div><div class="toc-sub">技术 × 运营双层防护</div></div>
         </div>
         <div class="toc-item" data-goto="s8">
-          <div class="toc-num">07</div>
+          <div class="toc-num">08</div>
           <div class="toc-divider"></div>
           <div><div class="toc-label">落地执行</div><div class="toc-sub">四步启动清单</div></div>
         </div>
@@ -995,7 +1068,7 @@ p.lead {
     </div>
   </div>
 
-  <!-- ── SLIDE 3 · Dual Track ───────────────────────── -->
+  <!-- ── SLIDE 3 · Framework ───────────────────────── -->
   <div class="slide" id="s3">
     <div class="slide-header">
       <div class="slide-header-brand"><div class="dot"></div>Apple 授权专营店 · 会员体系优化</div>
@@ -1003,21 +1076,77 @@ p.lead {
     </div>
     <div class="slide-body">
       <div data-a="up">
-        <div class="eyebrow">核心方案</div>
-        <h2 class="display">极简双轨：只有两个概念</h2>
-        <div class="principles-row">
-          <div class="principle-pill"><div class="p-dot"></div>双轨制 · 身份与货币分离</div>
-          <div class="principle-pill"><div class="p-dot rose"></div>防通关 · 强制拉长生命周期</div>
-          <div class="principle-pill"><div class="p-dot green"></div>重实体 · 勋章建立社交货币</div>
-          <div class="principle-pill"><div class="p-dot amber"></div>强风控 · 技术与流程双保障</div>
+        <div class="eyebrow">问题对应解法</div>
+        <h2 class="display">三个问题 · 三套解法</h2>
+        <p class="lead">每个模块都有明确来处，解法与问题一一对应。</p>
+      </div>
+      <div class="fw-rows" data-a="stagger">
+        <div class="fw-row">
+          <div class="fw-problem v1">
+            <div class="fw-pnum">01</div>
+            <div>
+              <div class="fw-plabel">问题</div>
+              <div class="fw-pname">积分没有价值</div>
+            </div>
+          </div>
+          <div class="fw-arrow">→</div>
+          <div class="fw-solution">
+            <div class="fw-sname">双轨会员体系</div>
+            <div class="fw-sdesc">成长值决定身份等级，积分用于兑换实惠权益。两条轨道各司其职，互不消耗。</div>
+            <div class="fw-stags"><span class="tag">成长值</span><span class="tag">积分</span><span class="tag">等级晋升</span></div>
+          </div>
         </div>
+        <div class="fw-row">
+          <div class="fw-problem v2">
+            <div class="fw-pnum">02</div>
+            <div>
+              <div class="fw-plabel">问题</div>
+              <div class="fw-pname">用户不够活跃</div>
+            </div>
+          </div>
+          <div class="fw-arrow">→</div>
+          <div class="fw-solution">
+            <div class="fw-sname">勋章促活体系</div>
+            <div class="fw-sdesc">完成行为任务领取实体 NFC 勋章，勋章集齐可反向解锁高等级，强制制造到店理由。</div>
+            <div class="fw-stags"><span class="tag pink">实体勋章</span><span class="tag pink">行为驱动</span><span class="tag pink">到店领取</span></div>
+          </div>
+        </div>
+        <div class="fw-row">
+          <div class="fw-problem v3">
+            <div class="fw-pnum">03</div>
+            <div>
+              <div class="fw-plabel">问题</div>
+              <div class="fw-pname">风控严重缺失</div>
+            </div>
+          </div>
+          <div class="fw-arrow">→</div>
+          <div class="fw-solution">
+            <div class="fw-sname">技术 + 运营双锁</div>
+            <div class="fw-sdesc">LBS 地理围栏 + 动态会员码 + 激增熔断，从技术层封堵黄牛；动态码 + 举报有奖，从运营层约束内鬼。</div>
+            <div class="fw-stags"><span class="tag" style="background:#f0fdf4;color:#16a34a;">LBS围栏</span><span class="tag" style="background:#f0fdf4;color:#16a34a;">动态码</span><span class="tag" style="background:#f0fdf4;color:#16a34a;">熔断机制</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE DUAL · 双轨会员体系 ──────────────────── -->
+  <div class="slide" id="s-dual">
+    <div class="slide-header">
+      <div class="slide-header-brand"><div class="dot"></div>Apple 授权专营店 · 会员体系优化</div>
+      <div class="slide-header-section">双轨会员体系 · 解决问题01</div>
+    </div>
+    <div class="slide-body">
+      <div data-a="up">
+        <div class="eyebrow">极简双轨</div>
+        <h2 class="display">只有两个概念</h2>
       </div>
       <div class="dual-grid" data-a="stagger">
         <div class="track-card purple">
           <div class="track-icon purple">⭐</div>
           <div>
             <div class="track-name">成长值</div>
-            <div class="track-sub">经验条 · 决定等级与勋章</div>
+            <div class="track-sub">经验条 · 决定等级身份</div>
           </div>
           <div class="track-tags">
             <span class="tag">面子 / 身份</span>
@@ -1061,7 +1190,7 @@ p.lead {
   <div class="slide" id="s4">
     <div class="slide-header">
       <div class="slide-header-brand"><div class="dot"></div>Apple 授权专营店 · 会员体系优化</div>
-      <div class="slide-header-section">成长体系</div>
+      <div class="slide-header-section">成长体系 · 承接双轨</div>
     </div>
     <div class="slide-body">
       <div data-a="up">
@@ -1113,75 +1242,11 @@ p.lead {
     </div>
   </div>
 
-  <!-- ── SLIDE 5 · Activation ───────────────────────── -->
-  <div class="slide" id="s5">
-    <div class="slide-header">
-      <div class="slide-header-brand"><div class="dot"></div>Apple 授权专营店 · 会员体系优化</div>
-      <div class="slide-header-section">促活设计</div>
-    </div>
-    <div class="slide-body">
-      <div data-a="up">
-        <div class="eyebrow">轻量化高频钩子</div>
-        <h2 class="display">低成本促活 · 零打扰设计</h2>
-      </div>
-      <div class="act-grid" data-a="stagger">
-        <div class="act-col">
-          <div class="act-col-title purple">⚡ 积分 · 获取方式</div>
-          <div class="act-item">
-            <div class="act-item-icon">📶</div>
-            <div>
-              <div class="act-item-title">Wi-Fi 自动签到（零操作）</div>
-              <div class="act-item-desc">连接门店 Wi-Fi 后台自动签到，推送"签到成功 +10积分"。<strong style="color:var(--text-primary);">无需扫码，无需店员操作。</strong></div>
-            </div>
-          </div>
-          <div class="act-item">
-            <div class="act-item-icon">🥽</div>
-            <div>
-              <div class="act-item-title">体验打卡（轻量核销）</div>
-              <div class="act-item-desc">试用新品拍照发朋友圈，店员后台看一眼即发豆，无需复杂核销流程。</div>
-            </div>
-          </div>
-          <div class="act-item">
-            <div class="act-item-icon">📱</div>
-            <div>
-              <div class="act-item-title">旧机估值（获客）</div>
-              <div class="act-item-desc">每周测一次旧手机回收价格得豆，同时为门店自动获取以旧换新销售线索。</div>
-            </div>
-          </div>
-        </div>
-        <div class="act-col">
-          <div class="act-col-title rose">🎯 积分 · 消耗流量钩</div>
-          <div class="act-item rose">
-            <div class="act-item-icon">☕</div>
-            <div>
-              <div class="act-item-title">50积分 + 9.9元 兑换咖啡</div>
-              <div class="act-item-desc">硬通货钩子。低成本把人引进店，来了就可能顺手买根线或贴个膜。</div>
-            </div>
-          </div>
-          <div class="act-item rose">
-            <div class="act-item-icon">💾</div>
-            <div>
-              <div class="act-item-title">数据迁移（高痛点服务）</div>
-              <div class="act-item-desc">LV2 以上会员或消耗指定积分可兑换免费迁移，官方收费项目转化为会员专属权益。</div>
-            </div>
-          </div>
-          <div class="act-item rose">
-            <div class="act-item-icon">✨</div>
-            <div>
-              <div class="act-item-title">设备清洁保养</div>
-              <div class="act-item-desc">积分兑换 AirPods 超声波清洗或机身抛光，服务成本低，用户感知价值高。</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- ── SLIDE 6 · Medal System ────────────────────── -->
   <div class="slide" id="s6">
     <div class="slide-header">
       <div class="slide-header-brand"><div class="dot"></div>Apple 授权专营店 · 会员体系优化</div>
-      <div class="slide-header-section">勋章体系</div>
+      <div class="slide-header-section">勋章促活体系 · 解决问题02</div>
     </div>
     <div class="slide-body">
       <div data-a="up">
@@ -1234,11 +1299,75 @@ p.lead {
     </div>
   </div>
 
+  <!-- ── SLIDE 5 · Points Design ───────────────────────── -->
+  <div class="slide" id="s5">
+    <div class="slide-header">
+      <div class="slide-header-brand"><div class="dot"></div>Apple 授权专营店 · 会员体系优化</div>
+      <div class="slide-header-section">积分权益设计 · 承接双轨</div>
+    </div>
+    <div class="slide-body">
+      <div data-a="up">
+        <div class="eyebrow">轻量化高频钩子</div>
+        <h2 class="display">积分如何获取与消耗</h2>
+      </div>
+      <div class="act-grid" data-a="stagger">
+        <div class="act-col">
+          <div class="act-col-title purple">⚡ 积分 · 获取方式</div>
+          <div class="act-item">
+            <div class="act-item-icon">📶</div>
+            <div>
+              <div class="act-item-title">Wi-Fi 自动签到（零操作）</div>
+              <div class="act-item-desc">连接门店 Wi-Fi 后台自动签到，推送"签到成功 +10积分"。<strong style="color:var(--text-primary);">无需扫码，无需店员操作。</strong></div>
+            </div>
+          </div>
+          <div class="act-item">
+            <div class="act-item-icon">🥽</div>
+            <div>
+              <div class="act-item-title">体验打卡（轻量核销）</div>
+              <div class="act-item-desc">试用新品拍照发朋友圈，店员后台一键确认即发放积分，无需复杂核销流程。</div>
+            </div>
+          </div>
+          <div class="act-item">
+            <div class="act-item-icon">📱</div>
+            <div>
+              <div class="act-item-title">旧机估值（获客）</div>
+              <div class="act-item-desc">每周测一次旧手机回收价格得积分，同时为门店自动获取以旧换新销售线索。</div>
+            </div>
+          </div>
+        </div>
+        <div class="act-col">
+          <div class="act-col-title rose">🎯 积分 · 消耗流量钩</div>
+          <div class="act-item rose">
+            <div class="act-item-icon">☕</div>
+            <div>
+              <div class="act-item-title">50积分 + 9.9元 兑换咖啡</div>
+              <div class="act-item-desc">硬通货钩子。低成本把人引进店，来了就可能顺手买根线或贴个膜。</div>
+            </div>
+          </div>
+          <div class="act-item rose">
+            <div class="act-item-icon">💾</div>
+            <div>
+              <div class="act-item-title">数据迁移（高痛点服务）</div>
+              <div class="act-item-desc">LV2 以上会员或消耗指定积分可兑换免费迁移，官方收费项目转化为会员专属权益。</div>
+            </div>
+          </div>
+          <div class="act-item rose">
+            <div class="act-item-icon">✨</div>
+            <div>
+              <div class="act-item-title">设备清洁保养</div>
+              <div class="act-item-desc">积分兑换 AirPods 超声波清洗或机身抛光，服务成本低，用户感知价值高。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ── SLIDE 7 · Risk Control ─────────────────────── -->
   <div class="slide" id="s7">
     <div class="slide-header">
       <div class="slide-header-brand"><div class="dot"></div>Apple 授权专营店 · 会员体系优化</div>
-      <div class="slide-header-section">风控体系</div>
+      <div class="slide-header-section">风控体系 · 解决问题03</div>
     </div>
     <div class="slide-body">
       <div data-a="up">
@@ -1381,7 +1510,7 @@ p.lead {
       </div>
       <div class="thanks-chips" data-a="up">
         <div class="chip">双轨驱动</div>
-        <div class="chip">成长值 × 能量豆</div>
+        <div class="chip">成长值 × 积分</div>
         <div class="chip">实体 NFC 勋章</div>
         <div class="chip filled">期待交流</div>
       </div>
